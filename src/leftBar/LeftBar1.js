@@ -34,8 +34,8 @@ function LeftBar1() {
                 </div>
             </div>
             <div className = {style.MM}> 
-                <div className = {style.Message}> Пары </div>
-                <div className = {style.Match}> Сообщения</div>
+                <div className = {style.Message}> Сообщение</div>
+                <div onClick={()=>console.log('privet')} className = {style.MatchMessage}>Пары</div>
             </div>
             <div> 
             

@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    padding: 0;
+    margin: 0;
+}
 .leftWrap {
     background-color: white;
     width: 341px;
@@ -22,11 +26,16 @@
     overflow: hidden;
     margin-right: 30px;
     margin-left: 30px;
+    cursor: pointer;
 }
 .MyProfile {
     font-size: 18pt;
     color: white;
-    
+    cursor: pointer;
+}
+.MyProfile:hover{
+    border-bottom: 1px solid black;
+    transition-duration: .3s
 }
 .MM {
     display: flex;
@@ -34,12 +43,21 @@
     margin-top: 15px;
     font-weight: bold;
     font-size: 15pt;
+    z-index: 1;
 }
 .Message {
     margin-right: 15px;
     border-bottom: 3px solid red;
+    cursor: pointer;
+    
 }
-
+.Message:hover{
+    border-bottom: 4px solid #D61915;
+    font-size: 16pt;
+}
+.Match  {
+    margin-right: 45px;
+}
 .MatchWrap {
     margin-top: 20px;
     display: grid;
@@ -66,7 +84,5 @@
     margin-left: -100px;
     color: white;
     font-weight: bold;
-    font-size: 14pt;
-    
-    
+    font-size: 14pt;   
 }
