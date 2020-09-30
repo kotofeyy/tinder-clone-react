@@ -1,4 +1,4 @@
-import React from 'react'
+/import React from 'react'
 import style from './leftBar.module.css'
 import avatar from './avatar.jpg'
 import one from './1.jpg'
@@ -35,7 +35,7 @@ function LeftBar1() {
             </div>
             <div className = {style.MM}> 
                 <div className = {style.Message}> Пары </div>
-                <div className = {style.Match}> Сообщения</div>
+                <div className = {style.Match}> <b>Сообщения<\b></div>
             </div>
             <div> 
             
