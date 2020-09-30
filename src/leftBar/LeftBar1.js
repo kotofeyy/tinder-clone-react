@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './leftBar.module.css'
 import avatar from './avatar.jpg'
-import one from './1.jpg'
+
 
 const data = [ 
     { 
