@@ -35,7 +35,7 @@ function LeftBar1() {
             </div>
             <div className = {style.MM}> 
                 <div className = {style.Message}> Пары </div>
-                <div className = {style.Match}> Сообщения</div>
+                <div className = {style.Match}> Messages</div>
             </div>
             <div> 
             
