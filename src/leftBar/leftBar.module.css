@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.leftWrap {
+    background-color: white;
+    width: 341px;
+    left: 0em;
+    right: auto;
+    height: 100vh;
+    font-family: Roboto;
+    border: 0.5px solid#e3e6e8;
+}
+
+.HeaderWrap {
+    display: flex;
+    align-items: center;
+    height: 73px;
+    background-color: deeppink;
+    background: linear-gradient(to right, deeppink, lightpink);
+}
+.Avatar img{
+    border: 2px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.MyProfile {
+    font-size: 18pt;
+    color: white;
+    
+}
+.MM {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 15pt;
+}
+.Message {
+    margin-right: 15px;
+    border-bottom: 3px solid red;
+}
+
+.MatchWrap {
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.5vw;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.MatchAvatar {
+    cursor: pointer;
+}
+
+.MatchAvatar img {
+    border-radius: 5px;
+    width: 100%;
+}
+.MatchAvatar:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.AvatarName {
+    position: absolute;
+    margin-top: 95px;
+    margin-left: -100px;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+    
+    
+}
