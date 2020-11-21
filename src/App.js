@@ -1,11 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import LeftBar1 from './leftBar/LeftBar1.js';
+import ViewPage from './viewPage/ViewPage.js';
 
 function App() {
+  const [nameOfTheMatchInHeader, setNameOfTheMatchInHeader] = React.useState()
+
+  const clickHandler = (data) => {
+    setNameOfTheMatchInHeader(data)
+  }
   return ( 
-      <LeftBar1 />
+    <div style = {{display: "flex"}}>
+      <LeftBar1 matchClick = {clickHandler}/>
+      <ViewPage nameMatchHeader = {nameOfTheMatchInHeader}/>
+    </div>
+    
   );
 }
 

@@ -1,0 +1,11 @@
+.Login {
+    right: 50%;
+    left: auto;
+    position: absolute;
+    top: 50%;
+}
+.Inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
