@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-body{
-    padding: 0;
-    margin: 0;
-}
 .leftWrap {
     background-color: white;
-    width: 341px;
+    width: 351px;
     left: 0em;
     right: auto;
     height: 100vh;
@@ -17,8 +13,8 @@ body{
     display: flex;
     align-items: center;
     height: 73px;
-    background-color: deeppink;
-    background: linear-gradient(to right, deeppink, lightpink);
+   
+    background: linear-gradient(262deg, #ff7854, #fd267d);
 }
 .Avatar img{
     border: 2px solid white;
@@ -26,16 +22,11 @@ body{
     overflow: hidden;
     margin-right: 30px;
     margin-left: 30px;
-    cursor: pointer;
 }
 .MyProfile {
     font-size: 18pt;
     color: white;
-    cursor: pointer;
-}
-.MyProfile:hover{
-    border-bottom: 1px solid black;
-    transition-duration: .3s
+    
 }
 .MM {
     display: flex;
@@ -43,21 +34,12 @@ body{
     margin-top: 15px;
     font-weight: bold;
     font-size: 15pt;
-    z-index: 1;
 }
 .Message {
     margin-right: 15px;
     border-bottom: 3px solid red;
-    cursor: pointer;
-    
 }
-.Message:hover{
-    border-bottom: 4px solid #D61915;
-    font-size: 16pt;
-}
-.Match  {
-    margin-right: 45px;
-}
+
 .MatchWrap {
     margin-top: 20px;
     display: grid;
@@ -74,15 +56,19 @@ body{
 .MatchAvatar img {
     border-radius: 5px;
     width: 100%;
+    transition: all 0.3s ease-out;
 }
-.MatchAvatar:hover {
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+.MatchAvatar img:hover {
+    transform: scale(1.06);
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
 }
 .AvatarName {
     position: absolute;
     margin-top: 95px;
-    margin-left: -100px;
+    margin-left: -70px;
     color: white;
     font-weight: bold;
-    font-size: 14pt;   
+    font-size: 14pt;
+    
+    
 }
