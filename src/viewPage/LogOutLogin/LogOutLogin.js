@@ -28,6 +28,7 @@ const customStyles = {
     }
   };
 function LogOutLogin() {
+    //модал регистрации
     var subtitle;
     const [modalIsOpen,setIsOpen] = React.useState(false);
     function openModal() {
@@ -37,16 +38,23 @@ function LogOutLogin() {
         setIsOpen(false);
     }
     function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        customStyles.Overlay.color = '#f00';
+        customStyles.Overlay.color = '#0a0a0a';
       }
+      //модал входа
+    const [logmodalIsOpen,setIsOpenLog] = React.useState(false);
+    function openModalLog() {
+        setIsOpenLog(true);
+    }
+    function closeModalLog(){
+        setIsOpenLog(false);
+    }
     return (
     <div className= {style.Bos}>
             <div className ={style.HeaderLog}>
                 <div className = {style.Logo}>
                     <b>CLove</b><img src={LogoHeart}width="30" height="30" style={{marginLeft:"5px"}}></img>
                 </div>
-                   <button className={style.ButtonLog}>Войдите</button>
+                   <button onClick={openModalLog} className={style.ButtonLog}>Войдите</button>
             </div>
             <div className={style.TextView}>
                 <div className={style.TextIn}>
@@ -62,6 +70,7 @@ function LogOutLogin() {
                 </div>
             </div>
             <Modal
+                //модал регистрации
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
                 style={customStyles}
@@ -88,7 +97,29 @@ function LogOutLogin() {
                     </div>
                 </div>
             </form>
-             </Modal>
+         </Modal>
+        <Modal
+                //модал входа
+                isOpen={logmodalIsOpen}
+                onRequestClose={closeModalLog}
+                style={customStyles}
+                contentLabel="Example Modal"
+                shouldCloseOnOverlayClick={true}
+                onAfterOpen={afterOpenModal}>
+                <form>
+                <div className = {style.RegModal}>
+                    <div onClick = {closeModalLog} className = {style.CloseButton}>
+                        <img src = {close_button} width = "30" height = "30"/>
+                    </div>
+                    <img src={LogoReg}width="30" height="30" style={{marginBottom:"5px"}}></img>
+                    <span>Войдите</span>
+                    <div className ={style.RegText}>Вы даете нам согласие на передачу своих персональных данных третьим лицам для их обработки в соответствии с целями, предусмотренными настоящей Политикой обработки персональных данных, на основании договоров, заключенных нами с этими третьими лицами и только в рамках таких договоров.</div>
+                    <input placeholder="Введите Логин"/>
+                    <input placeholder="Введите Пароль"/>
+                    <button className={style.LogBut}>Войти</button>
+                </div>
+            </form>   
+           </Modal>
     </div>
     )
 }

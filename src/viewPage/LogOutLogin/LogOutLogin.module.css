@@ -127,5 +127,22 @@
     margin:5px;
 }
 .Overlay{
-    background-color: black;
+    background-color: #0a0a0a;
+}
+.LogBut{
+    background: linear-gradient(262deg, #ff7854, #fd267d);
+    color: rgb(255, 255, 255);
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 15pt;
+    width: 250px;
+    padding: 15px;
+    border: none;
+    transition: all 0.5s ease-out;
+    outline: none;
+}
+.LogBut:hover {
+    background: linear-gradient(262deg, #fd267d,  #ff7854);
+    transition: opacity 0.5s ease-out;
+    opacity: 0.8;
 }

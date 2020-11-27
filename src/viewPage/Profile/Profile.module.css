@@ -1,0 +1,32 @@
+.WrapMyName{
+    width: 400px;
+    height: 170px;
+    background: linear-gradient(262deg, #ff7854, #fd267d);
+    margin-left:50px;
+    margin-top: 73px;
+    border-radius: 4%;
+}
+.MyName{
+    color: rgb(255, 255, 255);
+    margin:20px;
+    padding: 2px;
+    display: flex;
+}
+.MyName span{
+    height: 50px;
+}
+.MyImages{
+    width: 400px;
+    height: 468px;
+    display: flex;
+    border-radius: 5px;
+    margin-left:50px;
+    margin-top: 5px;
+}
+.MyAbout span{
+    display: flex;
+    flex-direction: column;
+}
+.MyAbout{
+    margin-top: 5px;
+}
