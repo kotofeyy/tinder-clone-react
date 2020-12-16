@@ -33,4 +33,6 @@ export const deleteRequest = (method, body = {}) => {
 
 export const ANY_PAGE = 'any_page'
 export const GET_MESSAGE_AND_SEND = 'get_message_and_send'
+export const REGISTRATION_NEW_USER = 'registration_new_user'
+export const LOGIN_USER = 'login_user'
 

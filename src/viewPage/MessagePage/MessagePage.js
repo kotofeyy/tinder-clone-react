@@ -3,31 +3,45 @@ import style from './MessagePage.module.css'
 import close_button from './images/close_button.png'
 import {getRequest, postRequest, GET_MESSAGE_AND_SEND} from '../../Api'
 import { useForm } from "react-hook-form";
+import SendButton from './SendButton/SendButton.js';
+import CodeEncode from './CodeEncode/CodeEncode.js'
+
+console.log("мой токен - ", document.cookie)
 
 
-function MessagePage({nameMatchHeader_, closeClick}) {
+
+
+function MessagePage({nameMatchHeader_, closeClick, tokenToMe}) {
     const [messages, setMessages] = React.useState()
     const [colorButton, setColorButton] = React.useState("#e0e4e9")
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        data.name = "Niktia"
-        data.mod = "from_me"
+        data.myToken = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        data.tokenToMe = tokenToMe
         sendMessageAndGet(data)
+        
         
     }
 
     React.useEffect(() => {
         let data = {}
-        data.name = ""
+        data.tokenToMe = tokenToMe
         data.messageText = ""
-        data.mod = ""
+        data.myToken = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        sendMessageAndGet(data)
+      }, [tokenToMe])
+
+    React.useEffect(() => {
+        let data = {}
+        data.tokenToMe = tokenToMe
+        data.messageText = ""
+        data.myToken = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         sendMessageAndGet(data)
       }, [])
 
 
     const sendMessageAndGet = async (_date) => {
         await postRequest(GET_MESSAGE_AND_SEND, _date).then(function (responce) {
-            console.log(responce['data'])
             setMessages(responce['data'])
         })
     }
@@ -53,7 +67,7 @@ function MessagePage({nameMatchHeader_, closeClick}) {
             </div>
             <div className = {style.MessageWindow}>
                 {messages ? messages.map((val) => {
-                    return  <div className = {val.mod == "from_me" ? style.FromMe : style.ToMe}>{val.message}  <span style = {{color: "black"}}>:{val.name}</span></div>
+                    return  <div className = {val.token ==  document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1") ? style.FromMe : style.ToMe}>{CodeEncode(val.message, -3)}  </div>
                 }): ""}
             </div>
             
@@ -61,7 +75,7 @@ function MessagePage({nameMatchHeader_, closeClick}) {
                 <div className = {style.MessageSend}>
                     {errors.messageText && ""}
                     <input onChange={handleChange} autocomplete="off" name="messageText" ref={register({required : true})} placeholder = "Введите сообщение"/>
-                    <button style = {{background: colorButton}} type="submit">Отправить</button>
+                    <SendButton />
                 </div>
             </form>
         </div>
